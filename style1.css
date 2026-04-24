@@ -1,0 +1,290 @@
+/* style.css - AI Organigram Presentation Layout */
+
+:root {
+  --primary: #061b52;
+  --secondary: #175ddc;
+  --accent: #7c3aed;
+  --success: #16a34a;
+  --warning: #f97316;
+  --danger: #e83e72;
+  --teal: #0ea5a8;
+  --bg: #f6f9ff;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --line: #0b1f55;
+  --shadow: 0 14px 35px rgba(15, 23, 42, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #ffffff 0%, var(--bg) 100%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.organigram-slide {
+  width: 100%;
+  min-height: 100vh;
+  padding: 48px 56px;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-title {
+  font-size: 52px;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.title-line {
+  width: 260px;
+  height: 5px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  margin-bottom: 28px;
+}
+
+.subtitle {
+  max-width: 360px;
+  font-size: 20px;
+  line-height: 1.45;
+  color: #334155;
+}
+
+.org-chart {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.level {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 28px;
+  width: 100%;
+  position: relative;
+  margin-bottom: 38px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  border: 2px solid #dbe7ff;
+  padding: 22px 20px;
+  min-width: 220px;
+  text-align: center;
+  position: relative;
+}
+
+.card.primary {
+  background: linear-gradient(135deg, #09245f, #175ddc);
+  color: #ffffff;
+  min-width: 420px;
+}
+
+.card.secondary {
+  min-width: 340px;
+}
+
+.role {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 700;
+  color: inherit;
+}
+
+.card.primary .name {
+  font-size: 21px;
+}
+
+.card.ai-product {
+  border-color: var(--success);
+}
+
+.card.transformation {
+  border-color: var(--accent);
+}
+
+.card.transformation-alt {
+  border-color: var(--warning);
+}
+
+.card.backend {
+  border-color: var(--secondary);
+}
+
+.card.ai {
+  border-color: var(--accent);
+}
+
+.card.data {
+  border-color: var(--success);
+}
+
+.card.devops {
+  border-color: var(--warning);
+}
+
+.card.github {
+  border-color: var(--teal);
+}
+
+.icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  margin: 0 auto 14px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: #ffffff;
+  background: var(--secondary);
+}
+
+.ai-product .icon {
+  background: var(--success);
+}
+
+.transformation .icon {
+  background: var(--accent);
+}
+
+.transformation-alt .icon {
+  background: var(--warning);
+}
+
+.backend .icon {
+  background: var(--secondary);
+}
+
+.ai .icon {
+  background: var(--accent);
+}
+
+.data .icon {
+  background: var(--success);
+}
+
+.devops .icon {
+  background: var(--warning);
+}
+
+.github .icon {
+  background: var(--teal);
+}
+
+.connector-down::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -38px;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 38px;
+  background: var(--line);
+}
+
+.team-level::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 7%;
+  right: 7%;
+  height: 3px;
+  background: var(--line);
+}
+
+.member-level {
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.member-level .card {
+  min-width: 190px;
+  max-width: 210px;
+  padding: 20px 16px;
+}
+
+.member-level::before {
+  content: "";
+  position: absolute;
+  top: -22px;
+  left: 4%;
+  right: 4%;
+  height: 3px;
+  background: var(--line);
+}
+
+.footer-strip {
+  margin: 20px auto 0;
+  max-width: 1280px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #dbe7ff;
+  border-radius: 18px;
+  padding: 20px 28px;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+}
+
+.footer-strip strong {
+  color: var(--primary);
+}
+
+.values {
+  display: flex;
+  gap: 22px;
+  color: var(--secondary);
+  font-weight: 700;
+}
+
+@media (max-width: 1100px) {
+  .organigram-slide {
+    padding: 32px 24px;
+  }
+
+  .slide-title {
+    font-size: 40px;
+  }
+
+  .level {
+    flex-wrap: wrap;
+  }
+
+  .team-level::before,
+  .member-level::before,
+  .connector-down::after {
+    display: none;
+  }
+
+  .card.primary,
+  .card.secondary {
+    min-width: 280px;
+  }
+
+  .footer-strip {
+    flex-direction: column;
+  }
+
+  .values {
+    flex-wrap: wrap;
+  }
+}
